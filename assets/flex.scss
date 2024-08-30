@@ -1,0 +1,83 @@
+@mixin flexMini($js:center, $ai:center) {
+    display: flex;
+    align-items: $ai;
+    justify-content: $js;
+}
+
+.flex-space-between {
+    @include flexMini(space-between);
+}
+
+.flex-space-around {
+    @include flexMini(space-around);
+}
+.row-reverse{
+    flex-direction: row-reverse !important;
+}
+@mixin flexMini($js:center,$ai:center) {
+    display: flex;
+    align-items: $ai;
+    justify-content: $js;
+}
+
+.width-full{
+    width: 100% !important;
+}
+
+.height-full{
+    height: 100% !important;
+}
+
+.position-relative{
+    position: relative;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.flex-center{
+    @include flexMini();
+}
+
+.flex-start{
+    @include flexMini(flex-start,flex-start);
+}
+
+.flex-end{
+    @include flexMini(flex-end);
+}
+.align-center{
+    align-items: center;
+}
+
+.flex-row-reverse{
+    flex-direction: row-reverse;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+.flex-warp{
+    flex-wrap: wrap;
+}
+
+.align-self{
+    align-self: flex-start;
+}
+
+.d-flex{
+    display: flex;
+}
+
+body{
+    font-family: "Poppins", sans-serif !important;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
