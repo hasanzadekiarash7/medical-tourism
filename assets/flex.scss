@@ -55,6 +55,10 @@
     flex-direction: row-reverse;
 }
 
+.flex-column-reverse{
+    flex-direction: column-reverse !important;
+}
+
 .flex-column{
     flex-direction: column;
 }
@@ -81,3 +85,17 @@ body{
 .cursor-pointer{
     cursor: pointer;
 }
+
+.max-width-1200{
+    max-width: 1200px;
+}
+
+.d-grid{
+    display: grid;
+}
+
+.grid-col-1{grid-template-columns: 1fr;}
+.grid-col-2{grid-template-columns: 1fr 1fr;}
+.grid-col-3{grid-template-columns: 1fr 1fr 1fr;}
+.grid-col-4{grid-template-columns: 1fr 1fr 1fr 1fr;}
+.grid-col-5{grid-template-columns: 1fr 1fr 1fr 1fr 1fr;}
