@@ -2,7 +2,7 @@
   <div
     class="d-grid details flex-start align-center"
     style="gap: 10px; padding: 10px 0px"
-    
+    :class="$viewport.isGreaterThan('desktop') ? 'grid-col-5' :$viewport.isGreaterOrEquals('tablet') ? 'grid-col-2' : $viewport.isLessThan('mobile') ? 'grid-col-1' :''"
   >
     <div
       class="d-flex flex-center flex-column"

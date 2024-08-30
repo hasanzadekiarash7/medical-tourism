@@ -16,7 +16,7 @@
         <div class="card-author d-flex flex-start">
           <div class="avatar d-flex flex-center">
             <img :src="item.bigSize.author.imageLink" alt="" />
-            <div class="d-flex flex-start flex-column">
+            <div class="d-flex flex-start flex-column" :class="item.bigSize.isAuthorTextBlack ? 'text-black' : ''">
               <strong class="font-size-4">{{
                 item.bigSize.author.fullName
               }}</strong>
@@ -36,7 +36,7 @@
         <div class="card-author d-flex flex-start">
           <div class="avatar d-flex flex-center">
             <img :src="item.smallSize?.author.imageLink" alt="" />
-            <div class="d-flex flex-start flex-column">
+            <div class="d-flex flex-start flex-column" :class="item.smallSize?.isAuthorTextBlack ? 'text-black' : ''">
               <strong class="font-size-4">{{
                 item.smallSize?.author.fullName
               }}</strong>
