@@ -84,7 +84,7 @@
 
     .card-author {
         position: absolute;
-        bottom: 10px;   
+        bottom: 10px;
         z-index: 10 !important;
         width: 100%;
         max-width: 350px;
@@ -101,6 +101,29 @@
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
             }
+        }
+    }
+}
+
+.hover-style {
+    img {
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        cursor: pointer;
+    }
+    &:hover {
+        img {
+            filter: brightness(30%);
+            -webkit-filter: brightness(30%);
+}
+        .avatar{
+            img{
+                filter: brightness(100%);
+                -webkit-filter: brightness(100%);
+}
         }
     }
 }

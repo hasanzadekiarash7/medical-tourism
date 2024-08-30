@@ -5,7 +5,7 @@
       :class="item.bigSize.isReverse == true ? 'flex-column-reverse' : ''"
       class="d-flex flex-center flex-column"
     >
-      <div class="card size-big position-relative">
+      <div class="card size-big position-relative" :class="item.bigSize.hoverAble ? 'hover-style': ''">
         <img :src="item.bigSize.cardImageLink" alt="" />
         <div class="card-title d-flex flex-start">
           <h1 class="font-size-6">{{ item.bigSize.title }}</h1>
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="card size-small position-relative">
+      <div class="card size-small position-relative" :class="item.smallSize?.hoverAble ? 'hover-style': ''">
         <img :src="item.smallSize?.cardImageLink" alt="" />
         <div class="card-title d-flex flex-start">
           <h1 class="font-size-6">{{ item.smallSize?.title }}</h1>
@@ -35,7 +35,7 @@
         </div>
         <div class="card-author d-flex flex-start">
           <div class="avatar d-flex flex-center">
-            <img :src="item.smallSize?.author.imageLink" alt="" />
+            <img :src="item.smallSize?.author.imageLink" v-if="item.smallSize?.author.imageLink" alt="" />
             <div class="d-flex flex-start flex-column" :class="item.smallSize?.isAuthorTextBlack ? 'text-black' : ''">
               <strong class="font-size-4">{{
                 item.smallSize?.author.fullName

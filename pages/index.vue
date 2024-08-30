@@ -17,18 +17,22 @@
       aperiam?
     </p>
     <div class="width-full mt-7 max-width-1200">
-      <div class="bottom-card position-relative">
+      <div class="bottom-card position-relative hover-style-pack cursor-pointer">
         <img src="../public/bottomCard.png" alt="" />
         <div class="bottom-card-content d-flex align-center flex-space-between">
-          <div class="ml-4 mb-1">
+          <!-- <div class="ml-4 mb-1">
             <h1>Iran</h1>
             <h1>Medical Tourism</h1>
-          </div>
-          <div class="mr-4">
+          </div> -->
+          <!-- <div class="mr-4">
             <Icon name="mdi:arrow-right-circle-outline" size="80" />
-          </div>
+          </div> -->
         </div>
       </div>
+    </div>
+    <h1 class="mt-10">Services Included in IMT Packages</h1>
+    <div class="width-full mt-7 mb-4 max-width-1200">
+      <card-pack :items="packCard" />
     </div>
     <h1 class="text-center font-size-6 mt-10">best packages</h1>
     <p class="text-center font-size-4">
@@ -37,10 +41,6 @@
     </p>
     <div class="width-full mt-7 max-width-1200">
       <abilities :items="cards2" />
-    </div>
-    <h1 class="mt-10">Services Included in IRHTO Packages</h1>
-    <div class="width-full mt-7 max-width-1200">
-      <!-- <CardPack /> -->
     </div>
   </div>
 </template>
@@ -51,34 +51,36 @@ import type { guide } from "~/components/types/guide.t";
 const cards = [
   {
     bigSize: {
-      title: "Hisma Desert",
+      title: "Breast Cancer",
       description:
-        "The hisma desert is a true marvel of nature, and several desert oasis.",
+        "Breast Cancer Breast cancer is the uncontrolled growth of abnormal cells that can develop in…",
       cardImageLink: "/card.png",
       author: {
         imageLink: "/avatar.png",
-        fullName: "Wazeem Al Mulk",
-        tag: "Traveler",
+        fullName: "DR.ELHAM ",
+        tag: "Breast Cancer",
       },
       isReverse: false,
+      hoverAble: true,
     },
     smallSize: {
-      title: "Hisma Desert",
+      title: "Pediatric Urology",
       description:
-        "The hisma desert is a true marvel of nature, and several desert oasis.",
+        "Pediatric Urology Phimosis At the end of the first year of life, retraction of the…",
       cardImageLink: "/card2.png",
       author: {
         imageLink: "/avatar.png",
         fullName: "Wazeem Al Mulk",
         tag: "Traveler",
       },
+      hoverAble: true,
     },
   },
   {
     bigSize: {
-      title: "Hisma Desert",
+      title: "Dental Implants",
       description:
-        "The hisma desert is a true marvel of nature, and several desert oasis.",
+        "Dental implants are alternatives to removable dentures or bridges and are used for cosmetic or functional reasons. Implants can be fashioned for a single, missing tooth or for multiple teeth. Patients being treated for trauma to the jaw or head and neck cancers may need multiple implants.",
       cardImageLink: "/card4.png",
       author: {
         imageLink: "/avatar.png",
@@ -86,24 +88,26 @@ const cards = [
         tag: "Traveler",
       },
       isReverse: true,
+      hoverAble: true,
     },
     smallSize: {
-      title: "Hisma Desert",
+      title: "Aneurysms",
       description:
-        "The hisma desert is a true marvel of nature, and several desert oasis.",
+        "Aneurysms An aneurysm is an abnormal ballooning of a damaged or weakened area in an…",
       cardImageLink: "/card3.png",
       author: {
         imageLink: "/avatar.png",
         fullName: "Wazeem Al Mulk",
         tag: "Traveler",
       },
+      hoverAble: true,
     },
   },
   {
     bigSize: {
-      title: "Hisma Desert",
+      title: "Infective Endocarditis",
       description:
-        "The hisma desert is a true marvel of nature, and several desert oasis.",
+        "Infective Endocarditis The endocardium is the inner lining of the heart muscle and covering of…",
       cardImageLink: "/card5.png",
       author: {
         imageLink: "/avatar.png",
@@ -111,17 +115,19 @@ const cards = [
         tag: "Traveler",
       },
       isReverse: false,
+      hoverAble: true,
     },
     smallSize: {
-      title: "Hisma Desert",
+      title: "Mitral Valve Prolapse",
       description:
-        "The hisma desert is a true marvel of nature, and several desert oasis.",
+        "Mitral Valve Prolapse Mitral valve prolapse is a deformity of the mitral valve that can…",
       cardImageLink: "/card6.png",
       author: {
         imageLink: "/avatar.png",
-        fullName: "Wazeem Al Mulk",
-        tag: "Traveler",
+        fullName: "DR.ZAHRA",
+        tag: "Mitral Valve Prolapse",
       },
+      hoverAble: true,
     },
   },
 ];
@@ -144,9 +150,9 @@ const cards2 = [
       description: "",
       cardImageLink: "/card_2.png",
       author: {
-        imageLink: "/avatar.png",
-        fullName: "Wazeem Al Mulk",
-        tag: "Traveler",
+        imageLink: "",
+        fullName: "",
+        tag: "",
       },
       isAuthorTextBlack: true,
     },
@@ -169,9 +175,9 @@ const cards2 = [
       description: "",
       cardImageLink: "/card_3.png",
       author: {
-        imageLink: "/avatar.png",
-        fullName: "Wazeem Al Mulk",
-        tag: "Traveler",
+        imageLink: "",
+        fullName: "",
+        tag: "",
       },
       isAuthorTextBlack: true,
     },
@@ -229,6 +235,45 @@ const guideCards = ref<guide[]>([
     title: "Health Arbitration",
     description:
       "The parties to a contract decide to settle their probable disputes in Privacy and Professionalism with Reasonable Costs",
+  },
+]);
+
+const packCard = ref<
+  Array<{
+    icon: string;
+    label: string;
+    variant: "primary" | "secondary" | "tertiary" | "amber" | "success";
+  }>
+>([
+  {
+    icon: "icon-park-solid:hotel",
+    label: "hotel",
+    variant: "tertiary",
+  },
+  {
+    icon: "mdi:translate",
+    label: "escort interpreter",
+    variant: "primary",
+  },
+  {
+    icon: "fa6-solid:user-doctor",
+    label: "surgery",
+    variant: "secondary",
+  },
+  {
+    icon: "mdi:bus",
+    label: "transfer",
+    variant: "primary",
+  },
+  {
+    icon: "mdi:hospital-building",
+    label: "pre-cost operative",
+    variant: "tertiary",
+  },
+  {
+    icon: "ion:shield-half-outline",
+    label: "Health Arbitration",
+    variant: "secondary",
   },
 ]);
 </script>

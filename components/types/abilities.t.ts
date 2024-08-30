@@ -11,6 +11,7 @@ type cardItem = {
   author: author;
   isReverse?:boolean;
   isAuthorTextBlack?: boolean;
+  hoverAble?:boolean;
 };
 export type abilities = {
   items: Array<{
